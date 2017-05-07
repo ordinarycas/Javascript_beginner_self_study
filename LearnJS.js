@@ -1,18 +1,21 @@
-var welcome = "Welcome to javascript";
+var welcome = "6.3 Welcome to javascript ES6??";
 var num = 32513.1455;
 
-//字串長度，包含空白
-console.log(welcome.length);
-//找出字串最後一個字
-console.log(welcome.charAt(welcome.length-1));
-//取得字串第2、3個字元，從0開始
-console.log(welcome.substring(1,3));
-//取得該字元起始位子
-console.log(welcome.indexOf('e'));
+console.log(Conversion(num));
 
-//數字轉字串
-//方法一：String()
-console.log(String(num) + 100 + "已經轉成字串了！");
-//方法二：.toString(2~32)
-console.log(num.toString() + 100 + "已經轉成字串了！");
-console.log(num + 100 + "未轉換！");
+function Conversion(x){
+	console.log("你輸入的資料型態是：" + typeof x);
+	if (typeof x == "number") {
+		console.log("數值為：" + x);
+		console.log("去尾數家100為：" + String(x + 100));
+		console.log("已成功轉換成字串型態，取小數點後兩位！！");
+		return x.toFixed(2).toString();
+	} else {
+		console.log("你輸入的字串為：" + x);
+		console.log("長度：" + x.length + "，最後一個字元：" + x.charAt(x.length-1));
+		console.log("第二個到第四個字元為：" + x.substring(1,4));
+		console.log("取得字元e的位子，第一個e在" + (x.indexOf('e')+1) + "個位子");
+		console.log("已成功轉換成數字型態！！");
+		return parseInt(x, 10);
+	}
+}
