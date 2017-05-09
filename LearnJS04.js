@@ -48,3 +48,28 @@ outerloop:
 		}
 	}
 console.log("FINAL i = "+i+"，j = " + j);
+
+//The Arguments Object - Example
+//JavaScript functions have a built-in object called the arguments object.
+//The argument object contains an array of the arguments used when the function was called (invoked).
+//This way you can simply use a function to find (for instance) the highest value in a list of numbers:
+x = findMax(1, 123, 500, 115, 44, 88);
+function findMax() {
+    var i;
+    var max = -Infinity;
+    for (i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+//Or create a function to sum all input values:
+x = sumAll(1, 123, 500, 115, 44, 88);
+function sumAll() {
+    var i, sum = 0;
+    for (i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
